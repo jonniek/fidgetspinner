@@ -13,6 +13,7 @@ body {
 	transform: translate(-50%, -50%) rotate(0);
 }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <body>
 	<img src="fidget.png" class="fidget" alt="">
 	<script>
@@ -25,8 +26,10 @@ body {
 			document.querySelector(".fidget").style.transform = "translate(-50%, -50%) rotate("+test+"deg) ";
 		}, 1); */
 		
+
 		window.scrollTo(0, 500000);
-		window.addEventListener('scroll', (e) => {
+
+		$(window).scroll(function(e) {
 			var speed = previousY - e.pageY;
 			previousY = e.pageY;
 		
@@ -41,7 +44,6 @@ body {
 			window.requestAnimationFrame(() => {
 				document.querySelector(".fidget").style.transform = "translate(-50%, -50%) rotate("+nextR+"deg) "; 
 			});
-		
 		});
 	</script>
 </body>
