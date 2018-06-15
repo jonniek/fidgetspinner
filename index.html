@@ -16,25 +16,25 @@ body {
 <body>
 	<img src="fidget.png" class="fidget" alt="">
 	<script>
-		let previousY = 0
-		let previousR = 0
+		var previousY = 0;
+		var previousR = 0;
 		
-		let test = 0;
+		var test = 0;
 		
 		setInterval(() => {
-			test = (test + 10 ) % 360
+			test = (test + 10 ) % 360;
 			document.querySelector(".fidget").style.transform = "translate(-50%, -50%) rotate("+test+"deg) ";
-		}, 1)
+		}, 1);
 		
 		window.scrollTo(0, 500000);
 		window.addEventListener('scroll', (e) => {
-			let speed = previousY - e.pageY
-			previousY = e.pageY
+			var speed = previousY - e.pageY;
+			previousY = e.pageY;
 		
-			let nextR = (previousR + (speed / 10)) % 360
-			previousR = nextR
+			var nextR = (previousR + (speed / 10)) % 360;
+			previousR = nextR;
 			
-			let scroll = window.scrollY
+			var scroll = window.scrollY;
 			if (scroll > 999000 || scroll < 1000) {
 				window.scrollTo(0, 500000);
 			}
@@ -43,6 +43,6 @@ body {
 				document.querySelector(".fidget").style.transform = "translate(-50%, -50%) rotate("+nextR+"deg) "; 
 			});
 		
-		})
+		});
 	</script>
 </body>
