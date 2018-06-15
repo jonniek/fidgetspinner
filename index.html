@@ -7,13 +7,12 @@ body {
 	top: 50%;
 	left: 50%;
 	position: fixed;
-	width: 150px;
-	height: 150px;
+	width: 300px;
+	height: 300px;
 	overflow: hidden;
 	transform: translate(-50%, -50%) rotate(0);
 }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <body>
 	<img src="fidget.png" class="fidget" alt="">
 	<script>
@@ -25,11 +24,11 @@ body {
 			test = (test + 10 ) % 360;
 			document.querySelector(".fidget").style.transform = "translate(-50%, -50%) rotate("+test+"deg) ";
 		}, 1); */
-		
+		console.log("hello", window)
 
 		window.scrollTo(0, 500000);
 
-		$(window).scroll(function(e) {
+		window.addEventListener('scroll', function(e) {
 			var speed = previousY - e.pageY;
 			previousY = e.pageY;
 		
@@ -41,7 +40,7 @@ body {
 				window.scrollTo(0, 500000);
 			}
 		
-				document.querySelector(".fidget").style.transform = "translate(-50%, -50%) rotate("+nextR+"deg) ";
-		});
+			document.querySelector(".fidget").style.transform = "translate(-50%, -50%) rotate("+nextR+"deg) ";
+		})
 	</script>
 </body>
