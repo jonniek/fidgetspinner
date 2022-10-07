@@ -29,13 +29,14 @@ body {
 		window.scrollTo(0, 500000);
 
 		window.addEventListener('scroll', function(e) {
-			var speed = previousY - e.pageY;
-			previousY = e.pageY;
+			var speed = previousY - window.scrollY;
+			previousY = window.scrollY;
 		
 			var nextR = (previousR + (speed / 10)) % 360;
 			previousR = nextR;
 			
 			var scroll = window.scrollY;
+
 			if (scroll > 999000 || scroll < 1000) {
 				window.scrollTo(0, 500000);
 			}
